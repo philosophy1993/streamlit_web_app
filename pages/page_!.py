@@ -8,3 +8,6 @@ st.title('哲学アプリ')
 '''
 
 st.code(code, language='python')
+
+
+st.text(f'住所：{address}')

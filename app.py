@@ -43,4 +43,4 @@ with st.form(key = 'profile_form'):
                     f'年齢層は{age_category}ですね。\n'
                     f'趣味は{",".join(hobby)}ですね'
                     )
-                    
+                
