@@ -52,6 +52,7 @@ def show_store(free_word, category, maxprice, opennow, api_key, next_page):
         place_details = json.loads(res.text)
         #pprint.pprint(place_details['reviews'])
         reviews = place_details['result']['reviews']
+        st.text(f"このお店の評価は：{place_details['result']['rating']}")
         for review in reviews:
             pprint.pprint(review)
             st.text(review['text'])
