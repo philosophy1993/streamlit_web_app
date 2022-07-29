@@ -42,4 +42,4 @@ with st.form(key = 'profile_form'):
             next_page = True
         show_store(free_word, category, maxprice, opennow, api_key,next_page,evaluation)
         next_page = False
-                    )
+                    
