@@ -61,17 +61,17 @@ with st.form(key = 'profile_form'):
                 <iframe src="https://www.google.com/maps/embed/v1/place?q={0}&key=AIzaSyB8f6M1nmXeBlEpc13xvqs_pDb6Y_aVJ1c" 
                 width="600" height="450" allowfullscreen="allowfullscreen"></iframe>
         """.format(place['name']),height =450)
-    #     params = {
-    #     "key": api_key,
-    #         "place_id":place['place_id'],
-    #         "region" : "jp",
-    #         "language" : "ja",
-    #         }
-    #     res = requests.get(url, params= params)
-    #     place_details = json.loads(res.text)
-    #     #pprint.pprint(place_details['reviews'])
-    #     reviews = place_details['result']['reviews']
-    #     for review in reviews:
-    #         pprint.pprint(review)
-    #         st.text(review['text'])
-    #         print("-------------------------------------\n")
+        params = {
+        "key": api_key,
+            "place_id":place['place_id'],
+            "region" : "jp",
+            "language" : "ja",
+            }
+        res = requests.get(url, params= params)
+        place_details = json.loads(res.text)
+        #pprint.pprint(place_details['reviews'])
+        reviews = place_details['result']['reviews']
+        for review in reviews:
+            pprint.pprint(review)
+            st.text(review['text'])
+            print("-------------------------------------\n")
