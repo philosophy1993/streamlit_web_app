@@ -30,10 +30,11 @@ def show_store(free_word, category, maxprice, opennow, api_key, next_page,evalua
         """,height =450)
     no_store =  True
     url = "https://maps.googleapis.com/maps/api/place/details/json"
+    
     for place in places['results'] :
     
         params = {
-        "key": api_key,
+            "key": api_key,
             "place_id":place['place_id'],
             "region" : "jp",
             "language" : "ja",
@@ -42,7 +43,7 @@ def show_store(free_word, category, maxprice, opennow, api_key, next_page,evalua
         place_details = json.loads(res.text)
         #pprint.pprint(place_details['reviews'])
         reviews = place_details['result']['reviews']
-
+        
         if place_details['result']['rating'] >= evaluation:
             stc.html("""
                     <h2><var>{0}<var></h2>
