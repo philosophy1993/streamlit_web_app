@@ -47,12 +47,12 @@ def show_store(free_word, category, maxprice, opennow, api_key, next_page,evalua
             stc.html("""
                     <h2><var>{0}<var></h2>
                     <iframe src="https://www.google.com/maps/embed/v1/place?q={0}&key=AIzaSyB8f6M1nmXeBlEpc13xvqs_pDb6Y_aVJ1c" 
-                    width="600" height="450" allowfullscreen="allowfullscreen"></iframe>
-            """.format(place['name']),height =450)
+                    width="300" height="300" allowfullscreen="allowfullscreen"></iframe>
+            """.format(place['name']),height =500, width = 500)
             st.text(f"このお店の評価は：{place_details['result']['rating']}")
             st.text('このお店の口コミ')
             for review in reviews:
-                st.text(review['text'])
+                st.markdown(review['text'])
             no_store = False
             
     if no_store:
