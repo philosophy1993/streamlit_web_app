@@ -9,10 +9,10 @@ from embed import show_store
 opennow = 0
 ousin_btn = st.button('更新')
 st.title('哲学アプリ')
-st.caption('これは哲学のテストアプリですよ。')
+st.caption('これは哲学のテストアプリです。')
 st.subheader('自己紹介')
 st.text('私はてつがくです。\n'
-            'google mapのapiを使いこなしたいと考えています。。')
+            'google mapのapiを使いこなしたいと考えています。')
 st.text('検索したいジャンル等を入力してください')
 api_key = st.secrets["hide_api_key"] 
 next_page = False
