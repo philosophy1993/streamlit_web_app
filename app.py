@@ -9,7 +9,7 @@ from embed import show_store
 opennow = 0
 ousin_btn = st.button('更新')
 st.title('哲学アプリ')
-st.caption('これは哲学のテストアプリです。')
+st.caption('これは哲学のテストアプリですよ。')
 st.subheader('自己紹介')
 st.text('私はてつがくです。\n'
             'google mapのapiを使いこなしたいと考えています。。')
