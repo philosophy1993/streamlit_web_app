@@ -21,9 +21,9 @@ def app2():
     #OpenAIへのリクエスト
     with st.form(key = 'profile_form'):
         #AIへの前提をインプット
-        AI_input = st.text_input('前提のインプット', value="")
+        AI_input = st.text_area('前提のインプット', value="")
         #AIへの入力
-        user_input = st.text_input('AIへのインプット', value="")
+        user_input = st.text_area('AIへのインプット', value="")
         #ボタン
         submit_btn = st.form_submit_button('送信')
         
