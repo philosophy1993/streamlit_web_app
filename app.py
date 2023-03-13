@@ -9,6 +9,5 @@ from OpenAI_ChatBot import app2
 from Cocktail_Generator import app3
 
 st.set_page_config(page_title="Cocktail_Generator", page_icon="🍸")
-app1()
-
+app3()
 
