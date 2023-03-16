@@ -19,5 +19,5 @@ if app == '評判の良い店舗検索':
     app1()
 elif app == 'ChatBot-OpenAI GPT-3.5':
     app2()
-elif app() == "Cocktail_Generator":
+elif app == "Cocktail_Generator":
     app3()
