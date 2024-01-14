@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI
 import streamlit as st
 from PIL import Image
 import requests
@@ -7,11 +7,12 @@ import time
 
 class GPT3:
     def __init__(self, api_key):
-        openai.api_key = api_key
-    
+        client = OpenAI(
+    organization=api_key,
+    )
     def generate_text(self, situation, who):
 
-        response = openai.ChatCompletion.create(
+            stream = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content":'''
@@ -53,10 +54,13 @@ class GPT3:
                 }
             ]   
         )
-        return response['choices'][0]['message']['content']
+            for chunk in stream:
+                if chunk.choices[0].delta.content is not None:
+                    print(chunk.choices[0].delta.content, end="")
+            return stream['choices'][0]['message']['content']
     
     def generate_image(self, prompt):
-        response = openai.Image.create(
+        response = self.client.Image.create(
             prompt=f"{prompt}",
             n=1,
             size="256x256"
@@ -66,6 +70,7 @@ class GPT3:
 def output(who, situation):
     #GPT3のインスタンスを生成
     gpt = GPT3(st.secrets["OpenAI_api_key"]["key"])
+    
     #GPT3に入力された状況と誰が飲むかの情報を渡し、レシピを生成
     recipe = gpt.generate_text(situation, who)
     #レシピを日本語と英語に分割

@@ -1,0 +1,26 @@
+# ログファイルを無視
+*.log
+
+# .env ファイルを無視（環境変数設定ファイル）
+.env
+
+# node_modules ディレクトリを無視（Node.jsの依存関係）
+node_modules/
+
+# ビルド生成物を無視
+dist/
+build/
+*.out
+
+# OS生成のファイルを無視
+.DS_Store
+Thumbs.db
+
+# IDE設定を無視
+.idea/
+*.iml
+.vscode/
+
+.streamlit/
+
+venv/
